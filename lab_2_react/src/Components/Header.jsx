@@ -1,6 +1,14 @@
-function Header() {
+function Header({ theme, toggleTheme }) {
   return (
-    <header className="bg-slate-900 text-white p-8 rounded-2xl shadow-xl mb-6 text-center border-b-4 border-blue-500">
+    <header className="relative bg-slate-900 text-white p-8 rounded-2xl shadow-xl mb-6 text-center border-b-4 border-blue-500">
+      <button
+        type="button"
+        onClick={toggleTheme}
+        className="sm:absolute top-4 right-4 mb-4 sm:mb-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 transition-all duration-200 cursor-pointer"
+      >
+        {theme === 'dark' ? '☀️ Денний режим' : '🌙 Нічний режим'}
+      </button>
+
       <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
         Романюк Андрій Володимирович
       </h1>
